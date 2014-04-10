@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<!-- SPAZIO MOBILE CARICAMENTO SOTTOMENU -->
+<div class="row">
+  <div id="spaziosottomenu" class="col-xs-12 col-md-12 col-lg-12">
+
+
+
+<div class="row greymenu">
+
+{% for post in categoria_list %}
+  <div class="hidden-xs hidden-sm col-md-3 col-lg-2">
+    <div class="thumbnail sfondothumb" style="min-height: 130px; margin-top: 10px;">{% load cropping %}
+      <a  href="{{ MYDIR }}/{{ post.id }}"><img class="featurette-image img-responsive" src="{% cropped_thumbnail post "cropping" %}" alt="Generic placeholder image"></a>
+      <div class="caption" style="padding: 0px;">
+        {% if session_language = 'en' %}
+            <h4 class="thumbtitle">{{ post.titolo_eng }}</h4>
+        {% else %}
+            <h4 class="thumbtitle">{{ post.titolo }}</h4>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div><!-- fine row -->
+
+<hr>
+
+  </div><!-- fine col - m12 -->
+</div>
+<!-- FINE SPAZIO SOTTOMENU -->
+
+
+
+    <!-- HEADER YOUTUBE E ICON-->
+
+ {% if session_language = 'en' %}
+     <h2 class="titolopro goldcolor">{{ post.titolo_eng }}</h2>
+ {% else %}
+    <h2 class="titolopro goldcolor">{{ post.titolo }}</h2>
+ {% endif %}
+
+<div class="row spaziorowbottom">
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+    <div class="video-container" id="youtuberesponsivo">
+{% if video_list %}
+{% for video in video_list %}   
+<!--
+ <iframe id="ytplayer" type="text/html" width="800" height="450"
+src="{{ video.youtubeurl }}"
+frameborder="0" allowfullscreen>
+</iframe>
+-->
+<iframe id="ytplayer" type="text/html" width="800" height="450"
+src="{{ video.youtubeurl }}?rel=0&showinfo=0&theme=light"
+frameborder="0" allowfullscreen>
+</iframe>
+
+{% endfor %}
+
+{% else %}
+{% for galleria in images_center %}
+<img class="img-responsive" src="{% cropped_thumbnail galleria "slidepage" %}" style="width: 100%;">
+{% endfor %}
+{% endif %}
+
+    </div>
+  </div> <!-- FINE COL MD 9-->
+
+
+<!--  LARGE MINIATURE DX ---->
+
+  <div class="hidden-xs hidden-sm hidden-md col-lg-3" style="padding-left: 0px;">
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6">
+      {% for galleria in images_left %}
+      {% load cropping %}
+
+
+     <p><a href="{% cropped_thumbnail galleria "croppingrender" %}" data-lightbox="roadtrip1"><img class="featurette-image img-responsive imgtablet" src="{% cropped_thumbnail galleria "croppingthumb" %}" alt="Generic placeholder image"></a></p>
+     {% endfor %}
+    </div>
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6">
+      {% for galleria in images_right %}
+      {% load cropping %}
+     <p><a href="{% cropped_thumbnail galleria "croppingrender" %}" data-lightbox="roadtrip1"><img class="featurette-image img-responsive imgtablet" src="{% cropped_thumbnail galleria "croppingthumb" %}" alt="Generic placeholder image"></a></p>
+     {% endfor %}
+    </div>
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+      {% for galleria in images_center %}
+      {% load cropping %}
+      <p><a href="{% cropped_thumbnail galleria "croppingrender" %}" data-lightbox="roadtrip1" ><img class="featurette-image img-responsive2" src="{% cropped_thumbnail galleria "cropping" %}" alt="Generic placeholder image"></a></p>
+      {% endfor %}
+    </div>
+
+  </div> <!-- FINE MD 3 -->
+
+<!-- MINIATURE DX tablet -->
+
+
+ <div class="hidden-xs hidden-sm col-md-12 hidden-lg rigaleft">
+    
+     <hr style="margin-bottom: 50px;">
+
+    <div class="hidden-xs col-sm col-md-6" style="padding-left: 0px;">
+      {% for galleria in images_left %}
+      {% load cropping %}
+     <p><a href="{% cropped_thumbnail galleria "croppingrender" %}" data-lightbox="roadtrip1"><img class="featurette-image img-responsive imgtablet" style="padding-left: 0px;" src="{% cropped_thumbnail galleria "croppingthumb" %}" alt="Generic placeholder image"></a></p>
+     {% endfor %}
+    </div>
+
+    <div class="hidden-xs hidden-sm-6 col-md-6" style="padding-left: 0px;">
+      {% for galleria in images_right %}
+      {% load cropping %}
+     <p><a href="{% cropped_thumbnail galleria "croppingrender" %}" data-lightbox="roadtrip1"><img class="featurette-image img-responsive imgtablet" style="padding-right: 0px;" src="{% cropped_thumbnail galleria "croppingthumb" %}" alt="Generic placeholder image"></a></p>
+     {% endfor %}
+    </div>
+
+  </div> <!-- FINE TABLET -->
+
+
+  <!-- MINIATURE DX MOBILE -->
+
+
+
+ <div class="col-xs-12 col-sm-12 hidden-md hidden-lg rigaleft">
+    
+   <hr style="margin-bottom: 50px;">
+    
+    <div class="col-xs-12 hidden-sm" style="padding-left: 0px; padding-right: 0px">
+      {% for galleria in images_left %}
+      {% load cropping %}
+     <p><a href="{% cropped_thumbnail galleria "croppingrender" %}" data-lightbox="roadtrip1"><img class="featurette-image img-responsive imgtablet" style="padding-left: 0px; padding-right: 0px" src="{% cropped_thumbnail galleria "croppingthumb" %}" alt="Generic placeholder image"></a></p>
+     {% endfor %}
+    </div>
+
+    <div class="col-xs-12 col-sm-12" style="padding-left: 0px; padding-right: 0px;">
+      {% for galleria in images_right %}
+      {% load cropping %}
+     <p><a href="{% cropped_thumbnail galleria "croppingrender" %}" data-lightbox="roadtrip1"><img class="featurette-image img-responsive imgtablet" style="padding-right: 0px; pading-right: 0px;" src="{% cropped_thumbnail galleria "croppingthumb" %}" alt="Generic placeholder image"></a></p>
+     {% endfor %}
+    </div>
+
+  </div> <!-- FINE TABLET -->
+
+
+</div> <!--- end row --->
+
+
+      <!-- FINE HEADER YOUTUBE ICONTE -->
+
+
+
+      <!-- ++++ THUMB CAROUSEL GALLERIA -->
+<div class="hidden-xs col-sm-12 col-md-12 col-lg-12" style="padding-left: 0px; padding-right: 0px;">
+
+{% include "componenti/carousel2.html" %}
+</div>
+
+      <!-- ++++ FINE THUMB CAROUSEL GALLERIA -->
+
+<!-- ++++ CONTENUTO +++ -->
+
+
+
+{% if post.impaginazione = '1' %}
+    {% include "componenti/dettaglioorr.html" %}
+{% else %}
+    {% include "componenti/dettagliovert.html" %}
+{% endif %}
+
+<!-- Fine Contenuto -->
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- SPAZIO MOBILE CARICAMENTO SOTTOMENU 
+<div class="row">
+  <div id="spaziosottomenu" class="col-md-12"></div>
+</div>
+<!-- FINE SPAZIO SOTTOMENU -->
+
+
+<!--- INIZIO GALLERY RENDER -->
+
+<div class="row">
+
+ 	{% for post in video_list %}
+    <div class="col-sm-6 col-md-2 col-lg-2" style="margin-bottom: 15px;">
+   {% for video in post.video.all %}
+    <a href="{{ video.youtubeurl }}">
+  	<img src="http://img.youtube.com/vi/{{ video.idyoutube }}/hqdefault.jpg" class="img-responsive" alt="{{ post.titolo }}"></a>
+    {% endfor %}
+
+  </div>
+  {% endfor %}
+
+  
+</div> <!-- fine row -->
+
+
+
+{% endblock %}
+

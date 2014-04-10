@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ STATIC_URL }}/assets/ico/favicon.png">
+
+    <title>STUDIO SAGITAIR</title>
+
+ <!-- REVOLUTION SLIDER -->
+  
+
+    <!-- CSS STYLE-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/revolution/css/style.css" media="screen" />
+
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script type="text/javascript" src="{{STATIC_URL}}/revolution/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/revolution/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/revolution/rs-plugin/css/settings.css" media="screen" />
+<!-- FINE REVOLUTION SLIDER -->
+
+    
+  <!--------- POP UP GALLERY ---------->
+  <script src="{{ STATIC_URL }}/popup/js/modernizr.custom.js"></script>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Karla:400,700">
+  <link rel="stylesheet" href="{{ STATIC_URL }}/popup/css/screen.css" media="screen"/>
+  <link rel="stylesheet" href="{{ STATIC_URL }}/popup/css/lightbox.css" media="screen"/>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="{{ STATIC_URL }}/popup/js/lightbox-2.6.min.js"></script>
+    
+  <!-- font awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/font/css/font-awesome.min.css">
+  
+    <!-- JQUERY PLUG IN -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ STATIC_URL }}/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}/carousel.css" rel="stylesheet">
+
+
+
+    <!-- SCORRIMENTO CAROSELLO -->
+    <!-- <link rel="Stylesheet" type="text/css" href="{{ STATIC_URL }}/css/smoothDivScroll.css" /> -->
+    
+    <!-- LESS -->
+  <link rel="stylesheet/less" href="{{ STATIC_URL }}/less/bootstrap.less">
+  <script src="{{ STATIC_URL }}/assets/js/less.js"></script>
+
+  <!-- CAROSELLO DESIGN -->
+
+ <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/cardesign/jcarousel.skeleton.css">
+ <script type="text/javascript" src="{{ STATIC_URL }}/cardesign/libs/jquery/jquery.js"></script>
+ <script type="text/javascript" src="{{ STATIC_URL }}/cardesign/dist/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}/cardesign/jcarousel.skeleton.js"></script>
+
+<!-- Fine Carosello Desin -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="{{ STATIC_URL }}/navbar.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="./assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- SCRIPT MENU -->
+     
+    <script>
+      $(function(){
+      $('li#magicsotto a').on('click', function(e){
+      e.preventDefault();
+      var page_url=$(this).prop('href');
+      $('#spaziosottomenu').load(page_url);
+      });
+
+    });
+
+    </script>
+
+    <!-- FINE SCRIPT -->
+
+
+
+  </head>
+
+
+<body>
+
+<div class="container" style="padding-left: 35px; padding-right: 35px; margin-top: 0px; padding-top: 0px;">
+ 
+ <!-- BANDIERINE -->
+ {% include "componenti/language.html" %}
+
+<!-- Menu -->
+ {% if session_language = 'en' %}
+     {% include "componenti/menu_eng.html" %}
+  {% else %}
+     {% include "componenti/menu.html" %}
+  {% endif %}
+<!-- fine Menu -->
+
+
+
+
+{% block content %}
+
+
+
+{% endblock %}
+
+
+
+
+ </div> <!-- /container -->
+
+
+<!-- Footer -->
+{% include "componenti/footer.html" %}
+<!-- Fine Footer -->
+<script type="text/javascript">
+        jQuery(document).ready(function() {
+             jQuery('.tp-banner').revolution(
+            {
+              delay:9000,
+              startwidth:1170,
+              startheight:500,
+              hideThumbs:10
+            });
+        });
+      </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{{ STATIC_URL }}/dist/js/bootstrap.min.js"></script>
+     <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <!-- LOAD JAVASCRIPT LATE - JUST BEFORE THE BODY TAG 
+       That way the browser will have loaded the images
+     and will know the width of the images. No need to
+     specify the width in the CSS or inline. -->
+    <script src="{{ STATIC_URL }}/assets/js/jquery.js"></script>
+    <script src="{{ STATIC_URL }}/assets/js/holder.js"></script>
+
+<!-- +++++ CAROUSEL THUMB GALLERY -->
+    <!-- jQuery library - Please load it from Google API's -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+
+  <!-- jQuery UI Widget and Effects Core (custom download)
+       You can make your own at: http://jqueryui.com/download -->
+  <script src="{{ STATIC_URL }}/js/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
+  
+  <!-- Latest version (3.0.6) of jQuery Mouse Wheel by Brandon Aaron
+       You will find it here: http://brandonaaron.net/code/mousewheel/demos -->
+  <script src="{{ STATIC_URL }}/js/jquery.mousewheel.min.js" type="text/javascript"></script>
+
+  <!-- jQuery Kinectic (1.5) used for touch scrolling -->
+  <script src="{{ STATIC_URL }}/js/jquery.kinetic.js" type="text/javascript"></script>
+
+  <!-- Smooth Div Scroll 1.3 minified-->
+  <script src="{{ STATIC_URL }}/js/jquery.smoothdivscroll-1.3-min.js" type="text/javascript"></script>
+
+  <!-- If you want to look at the uncompressed version you find it at
+       ./js/jquery.smoothDivScroll-1.3.js -->
+
+  <!-- Plugin initialization -->
+  <!--
+  <script type="text/javascript">
+    // Initialize the plugin with no custom options
+  
+ // Initialize the scroller
+  $("#makeMeScrollable").smoothDivScroll({
+    mousewheelScrolling: true,
+    visibleHotSpotBackgrounds: "always",
+    autoScrollingMode: "onstart",
+    autoScrollingDirection: "endlessloopright",
+    manualContinuousScrolling: true
+  });
+  </script> -->
+
+  <!-- CSS STYLE-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/revolution/css/style.css" media="screen" />
+
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script type="text/javascript" src="{{STATIC_URL}}/revolution/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/revolution/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/revolution/rs-plugin/css/settings.css" media="screen" />
+<!-- FINE REVOLUTION SLIDER -->
+
+  <!-- YOUTUBE RESPONSIVO -->
+    <script src="{{ STATIC_URL }}/youtube/jquery.fitvids.js"></script>
+
+    <script>
+      $(document).ready(function(){
+      // Target your .container, .wrapper, .post, etc.
+      $("#youtuberesponsivo").fitVids();
+      });
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- SPAZIO MOBILE CARICAMENTO SOTTOMENU -->
+<div class="row">
+  <div id="spaziosottomenu" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+</div>
+<!-- FINE SPAZIO SOTTOMENU -->
+
+
+<!--- INIZIO GALLERY RENDER -->
+
+<div class="row">
+{% for post in render_list %}
+
+  <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2" style="margin-bottom: 15px;">
+   {% for immagini in post.galleria.all %}
+   {% load cropping %}
+    <a href="{% cropped_thumbnail immagini "croppingslide" %}" data-lightbox="{{ post.titolo }}">
+  	{% endfor %}
+  	{% load cropping %}
+    <img src="{% cropped_thumbnail post "cropping" %}" class="img-responsive" alt="{{ post.titolo }}"></a></div>
+  {% endfor %}
+  
+
+
+  
+</div> <!-- fine row -->
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<div class="row spaziotoprow">
+
+  <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+    
+    <!-- <h2 class="titolopro goldcolor">{{ post.titolo }}</h2> -->
+    <!-- TESTO INGLESE -->
+   {% if session_language = 'en' %}
+        <p class="texttext"></br>
+        </br>{{ post.body_eng|safe }}
+        </p>
+  {% else %}
+       <!-- ITALIANO -->
+       <p class="texttext"></br>
+       </br>{{ post.body|safe }}
+       </p>
+  {% endif %}
+   
+
+  </div><!--Fine COL MD6 -->
+
+  <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><p>&nbsp;</p>
+  
+  {% load cropping %}
+    <img src="{% cropped_thumbnail post.planimetria "croppingcarousel" %}" class="planimetria">
+  </div>
+  
+  
+  </div>
+  <div class="col-lg-12">
+  </br>
+</br>
+    <p><h5>Condividi:&nbsp;</h5>
+       <i class="fa fa-facebook fa-1x"></i>&nbsp;
+       <i class="fa fa-twitter fa-1x"></i>&nbsp;
+       <i class="fa fa-google-plus fa-1x"></i>&nbsp;
+       <i class="fa fa-youtube fa-1x"></i>&nbsp;
+       <i class="fa fa-linkedin fa-1x"></i>&nbsp;
+       <i class="fa fa-pinterest fa-1x"></i>&nbsp;
+       <i class="fa fa-mail fa-1x"></i>&nbsp;
+    </p></div>
+
+
+
+</div><!-- Fine ROW -->

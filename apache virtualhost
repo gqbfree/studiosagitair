@@ -1,0 +1,21 @@
+    #DocumentRoot /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair
+    #ServerAdmin root@vps42667
+    ServerName test.ewmitaly.net
+    ServerAlias test.ewmitaly.net
+    # Other directives here
+    WSGIScriptAlias / /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair/apache/django.wsgi
+     
+  
+    Alias /static/admin/ /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair/admin/
+    Alias /static/image_cropping/ /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair/image_cropping/
+    Alias /static/filer/ /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair/filer/
+    #Alias /static/contact_form/ /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair/contact_form/
+    #Alias /static/tiny_mce/ /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair/tiny_mce/
+    Alias /static/ /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair/static/
+    Alias /media/ /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/sagitair/media/
+    <Directory /var/www/vhosts/vps42667.ovh.net/test.ewmitaly.net/sagitairbox/apache>
+    <Files django.wsgi>
+    Order allow,deny
+    Allow from all  
+    </Files>
+    </Directory>
